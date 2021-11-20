@@ -39,17 +39,7 @@
       </v-btn>
     </v-app-bar>
     <!-- Sizes your content based upon application components -->
-  <v-main>
-<v-content>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum rem suscipit magnam molestias
-       quos aspernatur optio delectus fuga sint accusantium eaque veniam aut consectetur labore,
-        incidunt dolor quibusdam rerum quas.
-      <!-- If using vue-router -->
-      <!-- <router-view></router-view> -->
-    </v-content>
-    <!-- Provides the application the proper gutter -->
-
-  </v-main>
+ 
   <v-navigation-drawer
       permanent
       width="20%"
