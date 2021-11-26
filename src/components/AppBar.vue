@@ -10,26 +10,35 @@
 
       <v-toolbar-title>Title</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items >
-        
-      </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items >
+        <v-btn
+        depressed
+        class="b1"
+        @click='tourFunc()'
+        >
         Tour
+        </v-btn>
       </v-toolbar-items>
-      <v-spacer></v-spacer>
       <v-toolbar-items >
+        <v-btn 
+        class="b2"
+        depressed
+        @click="shop()"
+        >
         Shop
+        </v-btn>
       </v-toolbar-items>
-      <v-spacer></v-spacer>
       <v-toolbar-items >
+        <v-btn depressed @click="co()">
         Contato
+        </v-btn>
       </v-toolbar-items>
-      <v-spacer></v-spacer>
       <v-toolbar-items >
+        <v-btn depressed @click="more()">
         Saiba Mais
+        </v-btn>
       </v-toolbar-items>
-      <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -50,3 +59,6 @@ export default {
   },
 }
 </script>
+<style scoped>
+
+</style>

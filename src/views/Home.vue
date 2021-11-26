@@ -22,6 +22,7 @@
     name: 'Home',
     computed:  {
       myCards(){
+        // console.log(this.$store.state.cards);
         return this.$store.state.cards
       },
       title(){
@@ -33,8 +34,8 @@
     },
     data(){
       return{
-        titleView: this.$store.state.title
-      }
+        titleView: this.$store.state.title,
+        }
     },
     
   }

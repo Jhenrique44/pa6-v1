@@ -3,6 +3,7 @@
     :loading="loading"
     class="mx-auto my-12"
     max-width="374"
+
   >
     <template slot="progress">
       <v-progress-linear
@@ -17,7 +18,11 @@
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 
-    <v-card-title>{{cardTitle}}</v-card-title>
+    <v-card-title>
+        <!-- {{myCards.name}} -->
+    {{ card[cardid].name}}
+    </v-card-title>
+    
     <v-card-text>
       <v-row
         align="center"
@@ -38,22 +43,33 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        {{}}
+        {{card[cardid].description}}
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>{{ card[cardid].address}}</div>
     </v-card-text>
     
   </v-card>
 </template>
 <script>
   export default {
-      props: ['cardid', 'cardTitle'],
-    data: () => ({
-      loading: false,
-      selection: 1,
-    }),
+    props: ['cardid', 'cardTitle'],
+    
+    data () {
+      return{
+        loading: false,
+        selection: 1,
+        card: this.$store.state.cards
+      }
+    }, 
+    computed: {
+      cards(){
+        console.log(this.$store.state.cards);
+        console.log(this.cardid);
+        return this.$store.state.cards
 
+    }
+    },
     methods: {
       reserve () {
         this.loading = true
