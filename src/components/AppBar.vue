@@ -31,12 +31,12 @@
       </v-toolbar-items>
       <v-toolbar-items >
         <v-btn depressed @click="co()">
-        Contato
+        Contact
         </v-btn>
       </v-toolbar-items>
       <v-toolbar-items >
         <v-btn depressed @click="more()">
-        Saiba Mais
+        Know More
         </v-btn>
       </v-toolbar-items>
       <v-btn icon>

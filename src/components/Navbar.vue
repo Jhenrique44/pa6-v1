@@ -9,7 +9,7 @@
           <v-list-item link>
             <v-list-item-content>
               <v-list-item-title class="text-h6">
-                  Events Navigation
+                  Countries Navigation
               </v-list-item-title>
               <v-list-item-subtitle></v-list-item-subtitle>
             </v-list-item-content>
@@ -36,13 +36,13 @@
             <v-list-item-icon>
               <v-icon>mdi-star</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Contato</v-list-item-title>
+            <v-list-item-title>Contact</v-list-item-title>
           </v-list-item>
           <v-list-item link>
             <v-list-item-icon>
               <v-icon>mdi-star</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Saiba mais</v-list-item-title>
+            <v-list-item-title>know More</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
