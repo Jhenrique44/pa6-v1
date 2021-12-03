@@ -1,3 +1,4 @@
+import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -13,7 +14,7 @@ export default new Vuex.Store({
       startDate: "2077-06-21", 
       endDate: "2077-06-29", 
       priceTicket: 300,
-      address: "Rio de janeiro - RJ"  
+      address: "Rio de janeiro"  
     },
     {
       name: "Lollapalooza", 
@@ -22,7 +23,7 @@ export default new Vuex.Store({
       startDate: "2022-03-30", 
       endDate: "2022-04-04", 
       priceTicket: 500,
-      address: "São Paulo - SP"
+      address: "São Paulo"
     },
     {
       name: "Tomorrowland", 
@@ -31,7 +32,7 @@ export default new Vuex.Store({
       startDate: "2023-03-30", 
       endDate: "2023-04-04", 
       priceTicket: 250,
-      address: "Bruxelas - BEL"    
+      address: "Bruxelas"    
     },
     {
       name: "Coachella", 
@@ -40,7 +41,7 @@ export default new Vuex.Store({
       startDate: "2022-03-30", 
       endDate: "2022-04-06", 
       priceTicket: 300,
-      address: "Califórnia - EUA"    
+      address: "Califórnia"    
     },
     {
       name: "Cascamorras ", 
@@ -49,7 +50,7 @@ export default new Vuex.Store({
       startDate: "2025-03-27", 
       endDate: "2025-03-29", 
       priceTicket: 50,
-      address: "Baza - SPA"    
+      address: "Baza"    
     },
     // 
     {
@@ -59,7 +60,7 @@ export default new Vuex.Store({
       startDate: "2022-12-23", 
       endDate: "2022-12-29", 
       priceTicket: "Free",
-      address: "México - MEX" 
+      address: "México" 
     },
     {
       name: "Cascamorras ", 
@@ -68,7 +69,7 @@ export default new Vuex.Store({
       startDate: "2022-03-30", 
       endDate: "2030-03-04", 
       priceTicket: 50,
-      address: "Baza - SPA"
+      address: "Baza"
     },
     {
       name: "Festival da Lua cheia", 
@@ -77,15 +78,30 @@ export default new Vuex.Store({
       startDate: "2024-03-22", 
       endDate: "2024-03-23", 
       priceTicket: 50,
-      address: "Tailandia - THA"
-    }
+      address: "Tailandia"
+    },
     
-  ],
+    ],
+    countries: [],
+
   title: "Hello"
   },
   mutations: {
+    SET_COUNTRIES(state, payload){
+      state.countries = payload
+    }
   },
   actions: {
+    fetchEvents({commit}){
+      axios.get('https://servicodados.ibge.gov.br/api/v1/paises/{paises}')
+      .then(res => { 
+        // console.log(res.data);
+        commit('SET_COUNTRIES', res.data)
+      })
+      .catch(err =>{
+        console.log(err);
+      })
+    }
   },
   getters: {
     bigTitle(state){

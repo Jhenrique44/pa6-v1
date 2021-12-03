@@ -13,47 +13,45 @@
       ></v-progress-linear>
     </template>
 
-    <v-img
-      height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-    ></v-img>
+      <v-img
+        :src="`https://picsum.photos/500/300?image=${ 5 + 10}`"
+        :lazy-src="`https://picsum.photos/10/6?image=${ 5 + 10}`"
+        aspect-ratio="1"
+        class="grey lighten-2"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+
 
     <v-card-title>
         <!-- {{myCards.name}} -->
-    {{ card[cardid].name}}
+    {{ cardInfo.nome.abreviado}} - {{cardInfo.localizacao.regiao.nome}}
     </v-card-title>
     
+    <v-card-subtitle>
+    Language:   {{cardInfo.linguas[0].nome}}
+    </v-card-subtitle>
     <v-card-text>
-      <v-row
-        align="center"
-        class="mx-0"
-      >
-        <v-rating
-          :value="4.5"
-          color="amber"
-          dense
-          half-increments
-          readonly
-          size="14"
-        ></v-rating>
-
-        <div class="grey--text ms-4">
-          4.5 (413)
-        </div>
-      </v-row>
-
-      <div class="my-4 text-subtitle-1">
-        {{card[cardid].description}}
-      </div>
-
-      <div>{{ card[cardid].address}}</div>
+      {{cardInfo.historico}}
     </v-card-text>
+   
     
   </v-card>
 </template>
 <script>
   export default {
-    props: ['cardid', 'cardTitle'],
+    props: ['cardid', 'cardInfo'],
     
     data () {
       return{

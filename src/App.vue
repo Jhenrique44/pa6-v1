@@ -2,9 +2,9 @@
   <!-- App.vue -->
   <div >
   <v-app>
-  <AppBar app></AppBar>
-  <div style="display: flex">
-  <Navbar app></Navbar>
+    <AppBar app></AppBar>
+    <div style="display: flex">
+    <Navbar  app></Navbar>
   <!-- Sizes your content based upon application components -->
   <!-- <v-main> -->
     <!-- Provides the application the proper gutter -->
